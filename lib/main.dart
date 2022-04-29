@@ -35,6 +35,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final API_KEY = '';
   // ignore: unused_field
   Object _weatherData = 'placeholder';
   // ignore: unused_field
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   Future _fetchData(String city) async {
     if (city == 'No city' || city == '') return;
     final apiURL =
-        'http://api.weatherapi.com/v1/forecast.json?key=83cb8dbaee974402bee82658221202&q=$city&days=3&aqi=no';
+        'http://api.weatherapi.com/v1/forecast.json?key=&q=$API_KEY&days=3&aqi=no';
 
     final response = await http.get(Uri.parse(apiURL));
     if (response.statusCode == 200) {
